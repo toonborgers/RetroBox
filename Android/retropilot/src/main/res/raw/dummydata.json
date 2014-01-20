@@ -1,0 +1,185 @@
+{
+	"activityTypes": {
+		"1": "Set the stage",
+		"2": "Gather data",
+		"3": "Generate insights",
+		"4": "Decide what to do",
+		"5": "Close the retrospective"
+	},
+	"activities": [{
+		"activityType": 1,
+		"name": "Car brand",
+		"description": "Participants compare the passed sprint with a car brand",
+		"howto": "Ask the team: \"If you think about this iteration as a car brand, which brand would you choose?\" If the iteration went perfectly most probably everyone will choose a Ferrari. If the iteration had several ups and downs maybe a Fiat would be more suitable. Give the team two or three minutes to think of an appropriate brand. Invite the team to reveal their car brand. Do not go into discussion at this point. This will provide an overall perspective on where the team stands.",
+		"materials": "None",
+		"durationMinutes": 5
+	},
+	{
+		"activityType": 1,
+		"name": "Round of Admiration",
+		"description": "Participants express what they admire about one another",
+		"howto": "Start a round of admiration by facing your neighbour and stating \u0027What I admire most about you is ...\u0027 Then your neighbour says what she admires about her neighbour and so on until the last participants admires you. Feels great, doesn\u0027t it?",
+		"materials": "None",
+		"durationMinutes": 5
+	},
+	{
+		"activityType": 1,
+		"name": "ESVP",
+		"description": "How do participants feel at the retro: Explorer, Shopper, Vacationer, or Prisoner?",
+		"howto": "Prepare a flipchart or whiteboard with areas for E, S, V, and P. Explain the concept: * Explorer: Eager to dive in and research what did and didn\u0027t work and how to improve. * Shopper: Positive attitude. Happy if one good things comes out. * Vacationer: Reluctant to actively take part but the retro beats the regular work. * Prisoner: Only attend because they (feel they) must. Take a poll (anonymously, using sticky notes). Count out the answers and keep track on the flipchart for all to see. Ask what people make of the data. If there\u0027s a majority of Vacationers or Prisoners consider using the retro to discuss this finding.",
+		"materials": "Flipchart/whiteboard, sticky notes, markers",
+		"durationMinutes": 10
+	},
+	{
+		"activityType": 1,
+		"name": "Weather Forecast",
+		"description": "Participants mark their \u0027weather\u0027 (mood) on a flipchart",
+		"howto": "On a flipchart or whiteboard, make drawings of storm, rain, clouds and sunshine. Each participant marks their mood on the sheet.",
+		"materials": "Flipchart or whiteboard, markers",
+		"durationMinutes": 5
+	},
+	{
+		"activityType": 1,
+		"name": "Temperature reading",
+		"description": "Participants mark their \u0027temperature\u0027 (mood) on a flipchart",
+		"howto": "On a flipchart of whiteboard, make a drawing of a thermometer from freezing to body temperature to hot. Each participant marks their mood on the sheet.",
+		"materials": "Flipchart or whiteboard, markers",
+		"durationMinutes": 5
+	},
+	{
+		"activityType": 2,
+		"name": "Lean Coffee",
+		"description": "Use the Lean Coffee format for a focused discussion of the top topics",
+		"howto": "Say how much time you set aside for this phase, then explain the rules of Lean Coffee for retrospectives. Everyone writes down topics they\u0027d like to discuss - 1 topic per sticky. Put the stickies up on a whiteboard or flipchart. The person who wrote it describes the topic in 1 or 2 sentences. Group stickies that are about the same topic. Everyone dot-votes for the 2 topics they want to discuss. Order the stickies according to votes. Start with the topic of highest interest. Set a timer for 5 minutes. When the timer beeps, everyone gives a quick thumbs up or down. Majority of thumbs up: The topic gets another 5 minutes. Majority of thumbs down: Start the next topic. Stop when the allotted time is over.",
+		"materials": "Stickies, markers",
+		"durationMinutes": 30
+	},
+	{
+		"activityType": 2,
+		"name": "Loved, Learned, Lacked, Longed for",
+		"description": "Explore what people loved, learned, lacked and longed for individually",
+		"howto": "Each person brainstorms individually for each of these 4 questions: * What I Loved * What I Learned * What I Lacked * What I Longed For Collect the answers, either stickies on flip charts or in a digital tool if you\u0027re distributed. Form 4 subgroups, one for each L, read all notes, identify patterns and report their findings to the group. Use this as input for the next phase.",
+		"materials": "Stickies, markers, flip charts",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 2,
+		"name": "Repeat and avoid",
+		"description": "Brainstorm what to repeat and what behaviours to avoid",
+		"howto": "Head 2 flip charts with \u0027Repeat\u0027 and \u0027Avoid\u0027 respectively. The participants write issues for the columns on sticky notes (1 per issue). You can also color code the stickies. Example categories are \u0027People\u0027, \u0027Process\u0027, \u0027Technology\u0027, ... Let everyone read out their notes and post them to the appropriate column. Are all issues unanimous?",
+		"materials": "Flip charts, Stickies, markers",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 2,
+		"name": "Like to Like",
+		"description": "Participants match quality cards to their own Start-Stop-Continue-proposals",
+		"howto": "Make ca. 20 quality cards, i.e. colored index cards with unique words such as fun, on time, clear, meaningful, awesome, dangerous, nasty,... Each team member has to write at least 9 index cards: 3 each with things to start doing, keep doing and stop doing. Choose one person to be the first judge. The judge turns the first quality card. From their own cards each member chooses the best match for this word and places it face down on the table.The last one to choose has to take their card back on their hand. The judge shuffles all submitted cards, turns them one by one and rules the best fit \u003d winning card. All submitted cards are discarded. The submitter of the winning card receives the quality card. The person left of the judge becomes the new judge. Stop when everyone runs out of cards (6-9 rounds). Whoever has the most quality cards wins. Debrief by asking for takeaways. (Game is based on \u0027Apples to Apples\u0027)",
+		"materials": "Quality cards, index cards, markers",
+		"durationMinutes": 30
+	},
+	{
+		"activityType": 2,
+		"name": "Speedboat / Sailboat",
+		"description": "Analyze what forces push you forward and what pulls you back",
+		"howto": "Draw a speedboat onto a flip chart paper. Give it a strong motor as well as a heavy anchor. Team members silently write on sticky notes what propelled the team forward and what kept it in place. One idea per note. Post the stickies motor and anchor respectively. Read out each one and discuss how you can increase \u0027motors\u0027 and cut \u0027anchors\u0027.",
+		"materials": "Flip chart, stickies, markers",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 3,
+		"name": "Remember the Future",
+		"description": "Imagine the next iteration is perfect. What is it like? What did you do?",
+		"howto": "\u0027Imagine you could time travel to the end of the next iteration (or release). You learn that it was it was the best, most productive iteration yet! How do your future selves describe it? What do you see and hear?\u0027 Give the team a little time to imagine this state and jot down some keywords to aid their memory. Then let everyone describe their vision of a perfect iteration. Follow up with \u0027What changes did we implement that resulted in such a productive and satisfying future?\u0027Write down the answers on index cards to use in the next phase",
+		"materials": "Markers, stickies",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 3,
+		"name": "The Worst We Could Do",
+		"description": "Explore how to ruin the next sprint for sure",
+		"howto": "Hand out pens and sticky notes. Ask everyone for ideas on how to turn the next sprint / release into a certain disaster (one idea per note). When everyone\u0027s finished writing, hang up all stickies and walk through them. Identify and discuss themes. In the next phase turn these negative actions into their opposite.",
+		"materials": "Markers, stickies",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 3,
+		"name": "5 why\u0027s",
+		"description": "Drill down to the root cause of problems by repeatedly asking \u0027Why?\u0027",
+		"howto": "Divide the participants into small groups (\u003c\u003d 4 people) and give each group one of the top identified issues. Instructions for the group:* One person asks the others \u0027Why did that happen?\u0027 repeatedly to find the root cause or a chain of events * Record the root causes (often the answer to the 5th \u0027Why?\u0027) Let the groups share their findings.",
+		"materials": "Paper, markers",
+		"durationMinutes": 15
+	},
+	{
+		"activityType": 3,
+		"name": "Cause-Effect-Diagram",
+		"description": "Find the source of problems whose origins are hard to pinpoint and lead to endless discussion",
+		"howto": "Write the problem you want to explore on a sticky note and put it in the middle of a whiteboard. Find out why that is a problem by repeatedly asking \u0027So what?\u0027. Find out the root causes by repeatedly asking \u0027Why (does this happen)?\u0027 Document your findings by writing more stickies and showing causal relations with arrows. Each sticky can have more than one reason and more than one consequence Vicious circles are usually good starting points for actions. If you can break their bad influence, you can gain a lot.",
+		"materials": "Flipchart, markers, stickies",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 4,
+		"name": "Low Hanging Fruit",
+		"description": "Visualize promise and ease of possible courses of actions to help pick",
+		"howto": "Reveal a previously drawn tree. Hand out round index cards and instruct participants to write down the actions they would like to take - one per card. When everyone\u0027s finished, collect the cards, shuffle and read them out one by one. Place each \u0027fruit\u0027 according to the participants\u0027 assessment: * Is it easy to do? Place it lower. Hard? More to the top. * Does it seem very beneficial? Place it more to the left. Value is dubious at best? To the right. The straightforward choice is to pick the bottom left fruit as action items. If this is not consensus, you can either have a short discussion to agree on some actions or dot vote.",
+		"materials": "Tree, stickies, markers",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 4,
+		"name": "Divide the Dollar",
+		"description": "How much is an action item worth to the team?",
+		"howto": "Hang up the list of possible actions. Draw a column next to it, titled \u0027Importance (in $)\u0027. The team gets to spend 100 (virtual) dollars on the action items. The more important it is to them, the more they should spend. Make it more fun by bringing paper money from a board game such as Monopoly. Let them agree on prices. Consider the 2 or 3 highest amount action items as chosen.",
+		"materials": "(Fake money), list of possible actions",
+		"durationMinutes": 15
+	},
+	{
+		"activityType": 4,
+		"name": "Pitch",
+		"description": "Ideas for actions compete for 2 available \u0027Will do\u0027-slots",
+		"howto": "Ask everyone to think of 2 changes they\u0027d like to implement and write them down on separate index cards. Draw 2 slots on the board. The first team member puts their favorite change idea into the first slot. His neighbor puts their favorite into the second slot. The third member has to pitch her favorite idea against the one already hanging that she favors less. If the team prefers her idea, it\u0027s swapped against the hanging one. This continues until everyone has presented both their cards. Try not to start the circle with dominant team members.",
+		"materials": "Whiteboard, flipchart, stickies, markers",
+		"durationMinutes": 20
+	},
+	{
+		"activityType": 4,
+		"name": "Merge",
+		"description": "Condense many possible actions down to just two the team will try",
+		"howto": "Hand out index cards and markers. Tell everyone to write down the two actions they want to try next sprint - as concretely as possible (SMART). Then everyone pairs up with their neighbor and both together must merge their actions into a single list with two actions. The pairs form groups of 4. Then 8. Now collect every group\u0027s two action items and have a vote on the final two.",
+		"materials": "Stickies, markers",
+		"durationMinutes": 10
+	},
+	{
+		"activityType": 4,
+		"name": "Dot Voting - Worked well, Do differently",
+		"description": "Gauge participants\u0027 satisfaction with the retro in minimum time using smilies",
+		"howto": "Draw a \u0027:)\u0027, \u0027:|\u0027, and \u0027:(\u0027 on a sheet of paper and tape it against the door. When ending the retrospective, ask your participants to mark their satisfaction with the session with an \u0027x\u0027 below the applicable smily.",
+		"materials": "Paper, tape",
+		"durationMinutes": 2
+	},
+	{
+		"activityType": 5,
+		"name": "Feedback Door - Smilies",
+		"description": "Brainstorm what worked well \u0026 what to do differently and pick the top initiatives",
+		"howto": "Head 2 flip charts with \u0027Worked well\u0027 and \u0027Do differently next time\u0027 respectively. Ask your participants to write concrete proposals for each category - 1 idea per index card. Let them write in silence for a few minutes. Let everyone read out their notes and post them to the appropriate category. Lead a short discussion on what the top 20% beneficial ideas are. Vote on it by distributing dots or X\u0027s with a marker, e.g. 1, 2, and 3 dots for each person to distribute. The top 2 or 3 become your action items.",
+		"materials": "Flip charts, stickies",
+		"durationMinutes": 10
+	},
+	{
+		"activityType": 5,
+		"name": "Plus \u0026 Delta",
+		"description": "Each participant notes 1 thing they like and 1 thing they\u0027d change about the retro",
+		"howto": "Prepare a flip chart with 2 columns: Head them with \u0027Plus\u0027 and \u0027Delta\u0027. Ask each participant to write down 1 aspect of the retrospective they liked and 1 thing they would change (on different index cards). Post the index cards and walk through them briefly to clarify the exact meaning and detect the majority\u0027s preference when notes from different people point into opposite directions.",
+		"materials": "Flip chart, stickies",
+		"durationMinutes": 5
+	},
+	{
+		"activityType": 5,
+		"name": "Pleased \u0026 Surprised",
+		"description": "What pleased and / or surprised participants in the retrospective",
+		"howto": "Source: Unknown Just make a quick round around the group and let each participant point out one finding of the retrospective that either surprised or pleased them (or both).",
+		"materials": "None",
+		"durationMinutes": 5
+	}]
+}
