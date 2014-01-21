@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RetroPilot</string>
+
+    <string name="information_welcome">Welcome to Retro</string>
+    <string name="information_create">Create Retro</string>
+
+    <string name="overview_title_planned">Planned Retro</string>
+    <string name="overview_title_passed">Passed Retro</string>
+    <string name="new_retro_name">Name</string>
+    <string name="new_retro_start">START</string>
+    <string name="new_retro_place">Place</string>
+
+</resources>
