@@ -12,27 +12,29 @@ import java.util.List;
 import be.cegeka.retrobox.domain.Retro;
 
 public class RetroRepository {
-    private final RetroPilotDBHelper retroPilotDBHelper;
+    private final RetroBoxDBHelper retroPilotDBHelper;
 
     public RetroRepository(Context ctx) {
-        this.retroPilotDBHelper = new RetroPilotDBHelper(ctx);
+        this.retroPilotDBHelper = new RetroBoxDBHelper(ctx);
     }
 
-    public void store(Retro retro) {
-        retroPilotDBHelper
+    public boolean store(Retro retro) {
+        long id = retroPilotDBHelper
                 .getWritableDatabase()
-                .insert(RetroPilotContract.Retros.TABLE_NAME, null, toContentValues(retro));
+                .insert(RetroBoxContract.Retros.TABLE_NAME, null, toContentValues(retro));
+
+        return id > 0;
     }
 
     public List<Retro> getRetros() {
-        Cursor cursor = retroPilotDBHelper.getReadableDatabase().query(RetroPilotContract.Retros.TABLE_NAME, null, null, null, null, null, null);
+        Cursor cursor = retroPilotDBHelper.getReadableDatabase().query(RetroBoxContract.Retros.TABLE_NAME, null, null, null, null, null, null);
         List<Retro> result = new ArrayList<Retro>();
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            int id = cursor.getInt(cursor.getColumnIndex(RetroPilotContract.Retros._ID));
-            String location = cursor.getString(cursor.getColumnIndex(RetroPilotContract.Retros.COL_LOCATION));
-            String name = cursor.getString(cursor.getColumnIndex(RetroPilotContract.Retros.COL_NAME));
-            long time = cursor.getLong(cursor.getColumnIndex(RetroPilotContract.Retros.COL_TIME));
+            int id = cursor.getInt(cursor.getColumnIndex(RetroBoxContract.Retros._ID));
+            String location = cursor.getString(cursor.getColumnIndex(RetroBoxContract.Retros.COL_LOCATION));
+            String name = cursor.getString(cursor.getColumnIndex(RetroBoxContract.Retros.COL_NAME));
+            long time = cursor.getLong(cursor.getColumnIndex(RetroBoxContract.Retros.COL_TIME));
 
             result.add(new Retro.Builder()
                     .withId(id)
@@ -48,11 +50,11 @@ public class RetroRepository {
     public ContentValues toContentValues(Retro retro) {
         ContentValues values = new ContentValues();
         if (retro.getId() > 0) {
-            values.put(RetroPilotContract.Retros._ID, retro.getId());
+            values.put(RetroBoxContract.Retros._ID, retro.getId());
         }
-        values.put(RetroPilotContract.Retros.COL_NAME, retro.getName());
-        values.put(RetroPilotContract.Retros.COL_LOCATION, retro.getLocation());
-        values.put(RetroPilotContract.Retros.COL_TIME, retro.getTime().toDateTime().getMillis());
+        values.put(RetroBoxContract.Retros.COL_NAME, retro.getName());
+        values.put(RetroBoxContract.Retros.COL_LOCATION, retro.getLocation());
+        values.put(RetroBoxContract.Retros.COL_TIME, retro.getTime().toDateTime().getMillis());
         return values;
     }
 }

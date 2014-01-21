@@ -2,7 +2,7 @@ package be.cegeka.retrobox.db;
 
 import android.provider.BaseColumns;
 
-public class RetroPilotContract {
+public class RetroBoxContract {
     public static final String DB_NAME = "be.cegeka.retropilot.DATABASE.db";
 
     public static final class Retros implements BaseColumns {
@@ -13,7 +13,7 @@ public class RetroPilotContract {
         public static final String COL_LOCATION = "location";
 
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE ")
+                .append("CREATE TABLE IF NOT EXISTS ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
@@ -33,7 +33,7 @@ public class RetroPilotContract {
         public static final String COL_RETRO_ID = "retroId";
 
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE ")
+                .append("CREATE TABLE IF NOT EXISTS ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
@@ -52,7 +52,7 @@ public class RetroPilotContract {
         public static final String COL_ACTIVITY_ID = "activityId";
 
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE ")
+                .append("CREATE TABLE IF NOT EXISTS ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")

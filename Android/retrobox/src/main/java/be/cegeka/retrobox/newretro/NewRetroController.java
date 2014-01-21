@@ -14,7 +14,7 @@ public class NewRetroController {
         this.retroRepository = retroRepository;
     }
 
-    public void storeRetro(String name, LocalDate date, LocalTime time, String place) {
+    public boolean storeRetro(String name, LocalDate date, LocalTime time, String place) {
         Retro newRetro = new Retro.Builder()
                 .withLocation(place)
                 .withName(name)
@@ -22,6 +22,6 @@ public class NewRetroController {
                         .withDate(date.getYear(), date.getMonthOfYear(), date.getDayOfMonth())
                         .withTime(time.getHourOfDay(), time.getMinuteOfHour(), 0, 0))
                 .build();
-        retroRepository.store(newRetro);
+        return retroRepository.store(newRetro);
     }
 }
