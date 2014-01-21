@@ -10,7 +10,7 @@
 
     <style name="RetroBox_button" parent="@android:style/Widget.Holo.Button">
         <item name="android:background">#33b5e5</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">#fff</item>
     </style>
 
 </resources>
