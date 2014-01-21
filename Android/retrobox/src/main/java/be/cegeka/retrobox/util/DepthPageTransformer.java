@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.overview;
+package be.cegeka.retrobox.util;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

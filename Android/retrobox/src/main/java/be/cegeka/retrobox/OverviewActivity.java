@@ -9,8 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import be.cegeka.retrobox.overview.DepthPageTransformer;
 import be.cegeka.retrobox.overview.OverviewPagerAdapter;
+import be.cegeka.retrobox.util.DepthPageTransformer;
 
 public class OverviewActivity extends Activity implements ActionBar.TabListener {
 
@@ -23,25 +23,18 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview_screen);
 
-        // Set up the action bar.
-        final ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        setUpTabs(actionBar);
+        setUpTabs();
     }
 
-    private void setUpTabs(final ActionBar actionBar) {
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
+    private void setUpTabs() {
+        final ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         mSectionsPagerAdapter = new OverviewPagerAdapter(getFragmentManager(), getApplicationContext());
 
-        // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setPageTransformer(true, new DepthPageTransformer());
 
-        // When swiping between different sections, select the corresponding
-        // tab. We can also use ActionBar.Tab#select() to do this if we have
-        // a reference to the Tab.
         mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -59,8 +52,6 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // When the given tab is selected, switch to the corresponding page in
-        // the ViewPager.
         mViewPager.setCurrentItem(tab.getPosition());
     }
 
@@ -84,6 +75,10 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
             case R.id.overview_new:
                 startActivity(new Intent(this, NewRetroActivity.class));
                 return true;
+            case R.id.overview_info:
+                startActivity(new Intent(this, AboutActivity.class));
+                return true;
+
         }
         return super.onOptionsItemSelected(item);
     }

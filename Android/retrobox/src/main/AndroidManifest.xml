@@ -8,11 +8,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-
-    <activity
-        android:name=".SplashActivity"
-        android:label="@string/app_name" >
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="be.cegeka.retrobox.OverviewActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,14 +19,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InformationActivity"
-            android:label="@string/app_name"></activity>
+            android:name="be.cegeka.retrobox.NewRetroActivity"
+            android:label="@string/app_name" />
         <activity
-            android:name=".OverviewActivity"
-            android:label="@string/app_name"></activity>
-        <activity
-            android:name=".NewRetroActivity"
-            android:label="@string/app_name"></activity>
+            android:name="be.cegeka.retrobox.AboutActivity"
+            android:label="@string/about_about_cegeka"></activity>
     </application>
 
 </manifest>
