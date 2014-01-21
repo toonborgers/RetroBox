@@ -3,6 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.Retrobox">
         <!-- Customize your theme here. -->
+        <item name="android:buttonStyle">
+            @style/RetroBox_button
+        </item>
+    </style>
+
+    <style name="RetroBox_button" parent="@android:style/Widget.Holo.Button">
+        <item name="android:background">#33b5e5</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
 </resources>
