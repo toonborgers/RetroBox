@@ -21,6 +21,10 @@ android {
             res.srcDirs = ['res']
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 apply plugin: 'maven'
 apply plugin: 'signing'
