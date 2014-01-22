@@ -2,15 +2,15 @@ package be.cegeka.retrobox.domain;
 
 import org.joda.time.DateTime;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Retro {
     private int id;
     private String name;
     private DateTime time;
     private String location;
-    private List<Activity> activities = new ArrayList<Activity>();
+    private Map<Integer, Activity> activities = new HashMap<Integer, Activity>();
 
     private Retro() {
     }
@@ -31,7 +31,7 @@ public class Retro {
         return id;
     }
 
-    public List<Activity> getActivities() {
+    public Map<Integer, Activity> getActivities() {
         return activities;
     }
 
@@ -62,7 +62,7 @@ public class Retro {
             return this;
         }
 
-        public Builder withActivities(List<Activity> activities) {
+        public Builder withActivities(Map<Integer, Activity> activities) {
             instance.activities = activities;
             return this;
         }

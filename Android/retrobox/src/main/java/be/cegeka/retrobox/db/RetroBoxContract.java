@@ -4,6 +4,7 @@ import android.provider.BaseColumns;
 
 public class RetroBoxContract {
     public static final String DB_NAME = "be.cegeka.retropilot.DATABASE.db";
+    public static final int VERSION = 1;
 
     public static final class Retros implements BaseColumns {
         public static final String TABLE_NAME = "retros";

@@ -7,6 +7,7 @@ import be.cegeka.retrobox.db.RetroBoxDBHelper;
 import be.cegeka.retrobox.db.RetroRepository;
 import be.cegeka.retrobox.newretro.NewRetroController;
 import be.cegeka.retrobox.util.ActivityImporter;
+import be.cegeka.retrobox.util.ActivityOverviewHelper;
 
 public class BeanProvider {
     private static Context applicationContext;
@@ -20,6 +21,7 @@ public class BeanProvider {
     private static RetroBoxDBHelper retroBoxDBHelper;
     private static ActivityRepository activityRepository;
     private static ActivityImporter activityImporter;
+    private static ActivityOverviewHelper activityOverviewHelper;
 
     private static RetroBoxDBHelper retroBoxDBHelper() {
         if (retroBoxDBHelper == null) {
@@ -54,5 +56,12 @@ public class BeanProvider {
             activityImporter = new ActivityImporter(applicationContext);
         }
         return activityImporter;
+    }
+
+    public static ActivityOverviewHelper activityOverviewHelper() {
+        if (activityOverviewHelper == null) {
+            activityOverviewHelper = new ActivityOverviewHelper(newRetroController());
+        }
+        return activityOverviewHelper;
     }
 }

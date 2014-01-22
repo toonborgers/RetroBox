@@ -23,7 +23,8 @@
         <activity
             android:name="be.cegeka.retrobox.NewRetroActivity"
             android:label="@string/new_retro_title"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="be.cegeka.retrobox.AboutActivity"
             android:label="@string/about_about_cegeka"

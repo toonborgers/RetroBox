@@ -23,10 +23,11 @@ import org.joda.time.LocalTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import be.cegeka.retrobox.BeanProvider;
 import be.cegeka.retrobox.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+
+import static be.cegeka.retrobox.BeanProvider.newRetroController;
 
 public class NewRetroDetailFragment extends Fragment implements CalendarDatePickerDialog.OnDateSetListener, RadialTimePickerDialog.OnTimeSetListener {
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd-MM-yyyy");
@@ -72,27 +73,8 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
         ButterKnife.inject(this, view);
         setupDateAndTimeFields();
         setupDoneButton();
+        setUpNameAndPlaceFields();
         return view;
-    }
-
-    private void setupDoneButton() {
-        btDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (etName.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(getActivity(), R.string.new_retro_name_error, Toast.LENGTH_LONG).show();
-                } else {
-                    String name = etName.getText().toString().trim();
-                    String place = etPlace.getText().toString().trim();
-                    LocalDate date = DATE_FORMAT.parseLocalDate(tvDate.getText().toString());
-                    LocalTime time = TIME_FORMAT.parseLocalTime(tvTime.getText().toString());
-                    if (BeanProvider.newRetroController().storeRetro(name, date, time, place)) {
-                        getActivity().setResult(Activity.RESULT_OK);
-                        getActivity().finish();
-                    }
-                }
-            }
-        });
     }
 
     private void setupDateAndTimeFields() {
@@ -111,6 +93,48 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
             @Override
             public void onClick(View view) {
                 showTimePicker();
+            }
+        });
+    }
+
+    private void setupDoneButton() {
+        btDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (etPlace.hasFocus()) {
+                    etPlace.clearFocus();
+                }
+                if (etName.hasFocus()) {
+                    etName.clearFocus();
+                }
+                if (!newRetroController().currentRetroIsValid()) {
+                    Toast.makeText(getActivity(), R.string.new_retro_name_error, Toast.LENGTH_LONG).show();
+                } else {
+                    if (newRetroController().storeCurrentRetro()) {
+                        getActivity().setResult(Activity.RESULT_OK);
+                        getActivity().finish();
+                        newRetroController().doneCreatingNewRetro();
+                    }
+                }
+            }
+        });
+    }
+
+    private void setUpNameAndPlaceFields() {
+        etName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    newRetroController().retroNameSet(etName.getText().toString().trim());
+                }
+            }
+        });
+        etPlace.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (!hasFocus) {
+                    newRetroController().retroPlaceSet(etPlace.getText().toString().trim());
+                }
             }
         });
     }
@@ -136,11 +160,14 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
             Toast.makeText(getActivity(), R.string.new_retro_date_error, Toast.LENGTH_LONG).show();
         } else {
             tvDate.setText(DATE_FORMAT.print(parsedDate));
+            newRetroController().retroDateSet(parsedDate);
         }
     }
 
     @Override
     public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
-        tvTime.setText(TIME_FORMAT.print(new LocalTime(hourOfDay, minute)));
+        LocalTime parsedTime = new LocalTime(hourOfDay, minute);
+        tvTime.setText(TIME_FORMAT.print(parsedTime));
+        newRetroController().retroTimeSet(parsedTime);
     }
 }

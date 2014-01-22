@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class RetroBoxDBHelper extends SQLiteOpenHelper {
     public RetroBoxDBHelper(Context context) {
-        super(context, RetroBoxContract.DB_NAME, null, 1);
+        super(context, RetroBoxContract.DB_NAME, null, RetroBoxContract.VERSION);
     }
 
     @Override

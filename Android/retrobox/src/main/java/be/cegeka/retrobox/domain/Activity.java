@@ -1,15 +1,63 @@
 package be.cegeka.retrobox.domain;
 
+import be.cegeka.retrobox.R;
+
+import static be.cegeka.retrobox.domain.Activity.ActivityType.forTypeCode;
+
 public class Activity {
+    public enum ActivityType {
+        SETTING_THE_STAGE(1, R.string.activities_set_stage, R.color.activity_type_setting_stage),
+        GATHERING_DATA(2, R.string.activities_gathering_data, R.color.activity_type_gathering_data),
+        ANALYZING_DATA(3, R.string.activities_analyzing_data, R.color.activity_type_analyzing_data),
+        FORMULATING_ACTIONS(4, R.string.activities_formulating_actions, R.color.activity_type_formulate_actions),
+        RETRO_RETRO(5, R.string.activities_retro_of_retro, R.color.activity_type_retro_retro);
+
+        private int typeCode;
+        private int titleResource;
+        private int colorResource;
+
+        private ActivityType(int typeCode, int titleResource, int colorResource) {
+            this.typeCode = typeCode;
+            this.titleResource = titleResource;
+            this.colorResource = colorResource;
+        }
+
+        public int getTypeCode() {
+            return typeCode;
+        }
+
+        public int getTitleResource() {
+            return titleResource;
+        }
+
+        public int getColorResource() {
+            return colorResource;
+        }
+
+        public static ActivityType forTypeCode(int typeCode) {
+            for (ActivityType type : values()) {
+                if (type.typeCode == typeCode) {
+                    return type;
+                }
+            }
+            return null;
+        }
+    }
+
     private int id;
-    private int activityType;
+    private int activityTypeCode;
     private String name;
     private String description;
     private String howto;
     private String materials;
     private int durationMinutes;
+    private boolean isEmpty;
 
     private Activity() {
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -32,8 +80,16 @@ public class Activity {
         return durationMinutes;
     }
 
-    public int getActivityType() {
-        return activityType;
+    public int getActivityTypeCode() {
+        return activityTypeCode;
+    }
+
+    public boolean isEmpty() {
+        return isEmpty;
+    }
+
+    public ActivityType getActivityType() {
+        return forTypeCode(activityTypeCode);
     }
 
     public static class Builder {
@@ -74,8 +130,13 @@ public class Activity {
             return this;
         }
 
-        public Builder withActivityType(int activityType) {
-            instance.activityType = activityType;
+        public Builder withActivityTypeCode(int activityTypeCode) {
+            instance.activityTypeCode = activityTypeCode;
+            return this;
+        }
+
+        public Builder withIsEmpty(boolean isEmpty) {
+            instance.isEmpty = isEmpty;
             return this;
         }
 

@@ -2,9 +2,11 @@ package be.cegeka.retrobox;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.inputmethod.InputMethodManager;
 
 import be.cegeka.retrobox.newretro.NewRetroPagerAdapter;
 import be.cegeka.retrobox.util.DepthPageTransformer;
@@ -13,6 +15,7 @@ public class NewRetroActivity extends FragmentActivity implements ActionBar.TabL
 
     private NewRetroPagerAdapter newRetroPagerAdapter;
     private ViewPager viewPager;
+    private InputMethodManager inputMethodManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class NewRetroActivity extends FragmentActivity implements ActionBar.TabL
         setContentView(R.layout.activity_new_retro);
 
         setupTabs();
-
+        inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
     private void setupTabs() {
@@ -37,6 +40,7 @@ public class NewRetroActivity extends FragmentActivity implements ActionBar.TabL
             @Override
             public void onPageSelected(int position) {
                 actionBar.setSelectedNavigationItem(position);
+                inputMethodManager.hideSoftInputFromWindow(viewPager.getWindowToken(), 0);
             }
         });
 

@@ -22,13 +22,12 @@ public class ActivityRepository {
     public void storeActivity(Activity activity) {
         ContentValues values = new ContentValues();
         values.put(RetroBoxContract.Activities.COL_NAME, activity.getName());
-        values.put(RetroBoxContract.Activities.COL_ACTIVITY_TYPE_ID, activity.getActivityType());
+        values.put(RetroBoxContract.Activities.COL_ACTIVITY_TYPE_ID, activity.getActivityTypeCode());
         values.put(RetroBoxContract.Activities.COL_DESCRIPTION, activity.getDescription());
         values.put(RetroBoxContract.Activities.COL_DURATION, activity.getDurationMinutes());
         values.put(RetroBoxContract.Activities.COL_HOWTO, activity.getHowto());
         values.put(RetroBoxContract.Activities.COL_MATERIALS, activity.getMaterials());
         retroBoxDBHelper.getWritableDatabase()
                 .insert(RetroBoxContract.Activities.TABLE_NAME, null, values);
-
     }
 }

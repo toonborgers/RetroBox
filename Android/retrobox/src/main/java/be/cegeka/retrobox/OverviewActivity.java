@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import be.cegeka.retrobox.overview.OverviewPagerAdapter;
 import be.cegeka.retrobox.util.DepthPageTransformer;
 
+import static be.cegeka.retrobox.BeanProvider.newRetroController;
+
 public class OverviewActivity extends Activity implements ActionBar.TabListener {
     private static final int CREATE_NEW_RETRO = 1;
     private OverviewPagerAdapter mSectionsPagerAdapter;
@@ -73,6 +75,7 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.overview_new:
+                newRetroController().startCreatingNewRetro();
                 startActivityForResult(new Intent(this, NewRetroActivity.class), CREATE_NEW_RETRO);
                 return true;
             case R.id.overview_info:
@@ -85,8 +88,9 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK) {
-            if (requestCode == CREATE_NEW_RETRO) {
+        if (requestCode == CREATE_NEW_RETRO) {
+            newRetroController().doneCreatingNewRetro();
+            if (resultCode == RESULT_OK) {
                 if (plannedRetrosChangeListener != null) {
                     plannedRetrosChangeListener.changedRetros();
                 }

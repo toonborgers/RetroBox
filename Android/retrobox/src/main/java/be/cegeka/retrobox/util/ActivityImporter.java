@@ -67,7 +67,7 @@ public class ActivityImporter {
             for (JSONActivity act : data.activities) {
                 Activity activity = new Activity.Builder()
                         .withName(act.name)
-                        .withActivityType(act.activityType)
+                        .withActivityTypeCode(act.activityType)
                         .withDescription(act.description)
                         .withDurationMinutes(act.durationMinutes)
                         .withHowto(act.howto)
