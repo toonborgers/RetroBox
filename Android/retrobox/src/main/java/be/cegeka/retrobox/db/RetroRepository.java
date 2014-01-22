@@ -1,7 +1,6 @@
 package be.cegeka.retrobox.db;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
 
 import org.joda.time.DateTime;
@@ -12,10 +11,10 @@ import java.util.List;
 import be.cegeka.retrobox.domain.Retro;
 
 public class RetroRepository {
-    private final RetroBoxDBHelper retroPilotDBHelper;
+    private RetroBoxDBHelper retroPilotDBHelper;
 
-    public RetroRepository(Context ctx) {
-        this.retroPilotDBHelper = new RetroBoxDBHelper(ctx);
+    public RetroRepository(RetroBoxDBHelper retroPilotDBHelper) {
+        this.retroPilotDBHelper = retroPilotDBHelper;
     }
 
     public boolean store(Retro retro) {

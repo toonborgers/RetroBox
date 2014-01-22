@@ -8,5 +8,6 @@ public class RetroBoxApplication extends Application {
     public void onCreate() {
         super.onCreate();
         BeanProvider.initBeanProvider(getApplicationContext());
+        BeanProvider.activityImporter().importActivities();
     }
 }

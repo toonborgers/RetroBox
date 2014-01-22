@@ -12,6 +12,7 @@ public class RetroBoxDBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(RetroBoxContract.Retros.CREATE);
+        sqLiteDatabase.execSQL(RetroBoxContract.ActivityTypes.CREATE);
         sqLiteDatabase.execSQL(RetroBoxContract.Activities.CREATE);
         sqLiteDatabase.execSQL(RetroBoxContract.RetroActivities.CREATE);
     }

@@ -23,14 +23,31 @@ public class RetroBoxContract {
                 .toString();
     }
 
+    public static final class ActivityTypes implements BaseColumns {
+        public static final String TABLE_NAME = "activityTypes";
+
+        public static final String COL_TYPE_ID = "typeId";
+        public static final String COL_DESCRIPTION = "description";
+
+        public static final String CREATE = new StringBuilder()
+                .append("CREATE TABLE IF NOT EXISTS ")
+                .append(TABLE_NAME)
+                .append("(")
+                .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
+                .append(COL_TYPE_ID + " INTEGER, ")
+                .append(COL_DESCRIPTION + " TEXT)")
+                .toString();
+    }
+
     public static final class Activities implements BaseColumns {
-        public static final String TABLE_NAME = "retros";
+        public static final String TABLE_NAME = "activities";
 
         public static final String COL_NAME = "name";
         public static final String COL_DESCRIPTION = "description";
         public static final String COL_MATERIALS = "materials";
         public static final String COL_DURATION = "duration";
-        public static final String COL_RETRO_ID = "retroId";
+        public static final String COL_HOWTO = "howto";
+        public static final String COL_ACTIVITY_TYPE_ID = "activityTypeId";
 
         public static final String CREATE = new StringBuilder()
                 .append("CREATE TABLE IF NOT EXISTS ")
@@ -40,13 +57,15 @@ public class RetroBoxContract {
                 .append(COL_NAME + " TEXT, ")
                 .append(COL_DESCRIPTION + " TEXT, ")
                 .append(COL_MATERIALS + " TEXT, ")
+                .append(COL_HOWTO + " TEXT, ")
                 .append(COL_DURATION + " INTEGER, ")
-                .append(COL_RETRO_ID + " INTEGER)")
+                .append(COL_ACTIVITY_TYPE_ID + " INTEGER,")
+                .append("FOREIGN KEY (" + COL_ACTIVITY_TYPE_ID + ") REFERENCES " + ActivityTypes.TABLE_NAME + "(" + ActivityTypes.COL_TYPE_ID + "))")
                 .toString();
     }
 
     public static final class RetroActivities implements BaseColumns {
-        public static final String TABLE_NAME = "activities";
+        public static final String TABLE_NAME = "retroActivities";
 
         public static final String COL_RETRO_ID = "retroId";
         public static final String COL_ACTIVITY_ID = "activityId";

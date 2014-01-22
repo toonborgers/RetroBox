@@ -25,7 +25,7 @@ public class PlannedRetroFragment extends ListFragment implements OverviewActivi
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        adapter = new PlannedRetroAdapter(getActivity(), BeanProvider.getRetroRepository().getRetros());
+        adapter = new PlannedRetroAdapter(getActivity(), BeanProvider.retroRepository().getRetros());
         setListAdapter(adapter);
         setUpLongClickListener();
     }
@@ -57,7 +57,7 @@ public class PlannedRetroFragment extends ListFragment implements OverviewActivi
     public void changedRetros() {
         adapter.clear();
         adapter.clearSelection();
-        adapter.addAll(BeanProvider.getRetroRepository().getRetros());
+        adapter.addAll(BeanProvider.retroRepository().getRetros());
     }
 
     private void itemClicked(int position) {
@@ -75,7 +75,7 @@ public class PlannedRetroFragment extends ListFragment implements OverviewActivi
     private void remove(List<Retro> retros) {
         for (Retro retro : retros) {
             adapter.remove(retro);
-            BeanProvider.getRetroRepository().remove(retro);
+            BeanProvider.retroRepository().remove(retro);
         }
     }
 
