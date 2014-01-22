@@ -10,9 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.domain.Activity;
+import be.cegeka.retrobox.ui.ActivityProgressBar;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -70,14 +72,11 @@ public class NewRetroActivitiesAdapter extends ArrayAdapter<Activity> {
         }
     }
 
+    private static Random random = new Random(System.currentTimeMillis());
+
     private void setProgressbarColor(ViewHolder holder, int color) {
-        GradientDrawable drawable = (GradientDrawable) ctx.getResources().getDrawable(R.drawable.activity_list_item_progressbar_background);
-        drawable.setColor(color);
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1) {
-            holder.progressbar.setBackground(drawable);
-        } else {
-            holder.progressbar.setBackgroundDrawable(drawable);
-        }
+        holder.progressbar.setBarColor(color);
+        holder.progressbar.setProgress(random.nextFloat() * 100f);
     }
 
     class ViewHolder {
@@ -88,7 +87,7 @@ public class NewRetroActivitiesAdapter extends ArrayAdapter<Activity> {
         @InjectView(R.id.activity_item_title)
         TextView itemTitle;
         @InjectView(R.id.activity_item_progressbar)
-        View progressbar;
+        ActivityProgressBar progressbar;
         @InjectView(R.id.activity_item_start)
         TextView startTime;
         @InjectView(R.id.activity_item_end)

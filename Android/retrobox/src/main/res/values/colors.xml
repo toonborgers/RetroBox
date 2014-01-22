@@ -6,7 +6,7 @@
     <color name="activity_type_analyzing_data">#518FCC</color>
     <color name="activity_type_formulate_actions">#7BB32A</color>
     <color name="activity_type_retro_retro">#FED337</color>
-    <color name="activity_border">#E5E5E5</color>
+    <color name="activity_border">#D8D8D8</color>
     <color name="activity_gray_text">#BCBCBC</color>
     <color name="activity_total_time">#4F88D7</color>
 </resources>
