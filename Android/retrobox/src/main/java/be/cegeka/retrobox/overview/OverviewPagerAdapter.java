@@ -8,7 +8,6 @@ import android.support.v13.app.FragmentPagerAdapter;
 import be.cegeka.retrobox.R;
 
 public class OverviewPagerAdapter extends FragmentPagerAdapter {
-
     private Context ctx;
 
     public OverviewPagerAdapter(FragmentManager fm, Context ctx) {

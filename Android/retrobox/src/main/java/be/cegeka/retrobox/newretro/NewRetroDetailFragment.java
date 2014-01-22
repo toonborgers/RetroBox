@@ -87,6 +87,7 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
                     LocalDate date = DATE_FORMAT.parseLocalDate(tvDate.getText().toString());
                     LocalTime time = TIME_FORMAT.parseLocalTime(tvTime.getText().toString());
                     if (BeanProvider.newRetroController().storeRetro(name, date, time, place)) {
+                        getActivity().setResult(Activity.RESULT_OK);
                         getActivity().finish();
                     }
                 }

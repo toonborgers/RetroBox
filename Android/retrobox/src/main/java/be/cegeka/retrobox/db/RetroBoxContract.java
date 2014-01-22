@@ -46,7 +46,7 @@ public class RetroBoxContract {
     }
 
     public static final class RetroActivities implements BaseColumns {
-        public static final String TABLE_NAME = "retros";
+        public static final String TABLE_NAME = "activities";
 
         public static final String COL_RETRO_ID = "retroId";
         public static final String COL_ACTIVITY_ID = "activityId";

@@ -26,6 +26,11 @@ public class RetroRepository {
         return id > 0;
     }
 
+    public void remove(Retro retro) {
+        retroPilotDBHelper.getWritableDatabase().delete(RetroBoxContract.Retros.TABLE_NAME,
+                RetroBoxContract.Retros._ID + "=?", new String[]{String.valueOf(retro.getId())});
+    }
+
     public List<Retro> getRetros() {
         Cursor cursor = retroPilotDBHelper.getReadableDatabase().query(RetroBoxContract.Retros.TABLE_NAME, null, null, null, null, null, null);
         List<Retro> result = new ArrayList<Retro>();
@@ -42,6 +47,7 @@ public class RetroRepository {
                     .withName(name)
                     .withTime(new DateTime(time))
                     .build());
+            cursor.moveToNext();
         }
         cursor.close();
         return result;

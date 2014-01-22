@@ -13,10 +13,10 @@ import be.cegeka.retrobox.overview.OverviewPagerAdapter;
 import be.cegeka.retrobox.util.DepthPageTransformer;
 
 public class OverviewActivity extends Activity implements ActionBar.TabListener {
-
+    private static final int CREATE_NEW_RETRO = 1;
     private OverviewPagerAdapter mSectionsPagerAdapter;
-
     private ViewPager mViewPager;
+    private PlannedRetrosChangeListener plannedRetrosChangeListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         mSectionsPagerAdapter = new OverviewPagerAdapter(getFragmentManager(), getApplicationContext());
 
-        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager = (ViewPager) findViewById(R.id.overwiew_pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setPageTransformer(true, new DepthPageTransformer());
 
@@ -73,7 +73,7 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.overview_new:
-                startActivity(new Intent(this, NewRetroActivity.class));
+                startActivityForResult(new Intent(this, NewRetroActivity.class), CREATE_NEW_RETRO);
                 return true;
             case R.id.overview_info:
                 startActivity(new Intent(this, AboutActivity.class));
@@ -81,5 +81,25 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
 
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            if (requestCode == CREATE_NEW_RETRO) {
+                if (plannedRetrosChangeListener != null) {
+                    plannedRetrosChangeListener.changedRetros();
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void setPlannedRetrosChangeListener(PlannedRetrosChangeListener listener) {
+        this.plannedRetrosChangeListener = listener;
+    }
+
+    public interface PlannedRetrosChangeListener {
+        public void changedRetros();
     }
 }
