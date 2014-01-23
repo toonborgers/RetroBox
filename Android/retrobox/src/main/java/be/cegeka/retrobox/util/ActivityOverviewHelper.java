@@ -57,7 +57,7 @@ public class ActivityOverviewHelper {
 
     private String partToString(long part) {
         String partString = String.valueOf(part);
-        if (part > 10) {
+        if (part >= 10) {
             return partString;
         }
         return "0" + partString;

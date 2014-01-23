@@ -83,7 +83,6 @@ public class OverviewActivity extends Activity implements ActionBar.TabListener 
             case R.id.overview_info:
                 startActivity(new Intent(this, AboutActivity.class));
                 return true;
-
         }
         return super.onOptionsItemSelected(item);
     }

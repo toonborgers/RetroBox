@@ -3,11 +3,15 @@ package be.cegeka.retrobox.newretro;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 
+import be.cegeka.retrobox.AboutActivity;
 import be.cegeka.retrobox.BeanProvider;
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.util.DepthPageTransformer;
@@ -52,6 +56,21 @@ public class NewRetroActivity extends FragmentActivity implements ActionBar.TabL
                             .setText(newRetroPagerAdapter.getPageTitle(i))
                             .setTabListener(this));
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.newretro, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.new_retro_info) {
+            startActivity(new Intent(this, AboutActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
