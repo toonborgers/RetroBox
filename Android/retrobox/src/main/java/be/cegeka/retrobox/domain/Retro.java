@@ -35,6 +35,18 @@ public class Retro {
         return activities;
     }
 
+    public void setTime(DateTime time) {
+        this.time = time;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public static class Builder {
         private Retro instance;
 

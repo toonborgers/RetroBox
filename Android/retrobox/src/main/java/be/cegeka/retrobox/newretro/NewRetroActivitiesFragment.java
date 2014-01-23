@@ -51,7 +51,7 @@ public class NewRetroActivitiesFragment extends Fragment implements RetroCreatio
     @Override
     public void onDetach() {
         super.onDetach();
-        retroCreationContext().unsetScreen();
+        retroCreationContext().unsetRetroActivitiesScreen();
     }
 
     @Override

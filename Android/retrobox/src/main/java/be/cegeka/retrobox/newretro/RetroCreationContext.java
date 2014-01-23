@@ -17,7 +17,7 @@ import static be.cegeka.retrobox.domain.ActivityExecution.forActivity;
 
 public class RetroCreationContext {
     private RetroRepository retroRepository;
-    private Retro.Builder currentRetroBuilder;
+    private Retro currentRetro;
     private RetroActivitiesScreen retroActivitiesScreen;
 
     public RetroCreationContext(RetroRepository retroRepository) {
@@ -25,18 +25,18 @@ public class RetroCreationContext {
     }
 
     public void startCreatingNewRetro() {
-        currentRetroBuilder = RetroFactory.newRetroBuilder();
+        currentRetro = RetroFactory.newRetroBuilder().build();
     }
 
     public void retroDateSet(LocalDate newDate) {
-        currentRetroBuilder.withTime(currentRetro()
+        currentRetro.setTime(currentRetro()
                 .getTime()
                 .withDate(newDate.getYear(), newDate.getMonthOfYear(), newDate.getDayOfMonth())
         );
     }
 
     public void retroTimeSet(LocalTime newTime) {
-        currentRetroBuilder.withTime(currentRetro()
+        currentRetro.setTime(currentRetro()
                 .getTime()
                 .withTime(newTime.getHourOfDay(), newTime.getMinuteOfHour(), 0, 0)
         );
@@ -46,14 +46,14 @@ public class RetroCreationContext {
     }
 
     public void retroNameSet(String newName) {
-        if (currentRetroBuilder != null) {
-            currentRetroBuilder.withName(newName);
+        if (currentRetro != null) {
+            currentRetro.setName(newName);
         }
     }
 
     public void retroPlaceSet(String newPlace) {
-        if (currentRetroBuilder != null) {
-            currentRetroBuilder.withLocation(newPlace);
+        if (currentRetro != null) {
+            currentRetro.setLocation(newPlace);
         }
     }
 
@@ -66,17 +66,17 @@ public class RetroCreationContext {
     }
 
     public void doneCreatingNewRetro() {
-        currentRetroBuilder = null;
+        currentRetro = null;
     }
 
     public Retro currentRetro() {
-        return currentRetroBuilder.build();
+        return currentRetro;
     }
 
     public List<ActivityExecution> currentActivities() {
         List<ActivityExecution> result = new ArrayList<ActivityExecution>();
         for (ActivityType type : ActivityType.values()) {
-            result.add(currentRetro().getActivities().get(type.getTypeCode()));
+            result.add(currentRetro.getActivities().get(type.getTypeCode()));
         }
         return result;
     }
@@ -85,7 +85,7 @@ public class RetroCreationContext {
         this.retroActivitiesScreen = retroActivitiesScreen;
     }
 
-    public void unsetScreen() {
+    public void unsetRetroActivitiesScreen() {
         this.retroActivitiesScreen = null;
     }
 
