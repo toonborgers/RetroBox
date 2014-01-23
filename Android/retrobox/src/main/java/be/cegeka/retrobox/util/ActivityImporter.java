@@ -13,6 +13,7 @@ import org.joda.time.format.DateTimeFormatter;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -33,7 +34,16 @@ public class ActivityImporter {
         this.ctx = ctx;
     }
 
-    public void importActivities() {
+    public void doImport() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                importActivities();
+            }
+        }).run();
+    }
+
+    private void importActivities() {
         Long start = System.currentTimeMillis();
         Gson gson = new Gson();
 
@@ -59,11 +69,12 @@ public class ActivityImporter {
         Log.d(TAG, "Version date from json: " + versionDate.toString());
         storeActivityType(data);
         if (areNewActivities(versionDate)) {
-            Log.d(TAG, "Storing" + data.activities.size() + " new activities");
+            Log.d(TAG, "Storing " + data.activities.size() + " new activities");
             sharedPreferences()
                     .edit()
                     .putLong(KEY_VERSION_DATE, versionDate.toDateTimeAtStartOfDay().getMillis())
                     .commit();
+            List<Activity> activities = new ArrayList<Activity>();
             for (JSONActivity act : data.activities) {
                 Activity activity = new Activity.Builder()
                         .withName(act.name)
@@ -73,8 +84,9 @@ public class ActivityImporter {
                         .withHowto(act.howto)
                         .withMaterials(act.materials)
                         .build();
-                activityRepository().storeActivity(activity);
+                activities.add(activity);
             }
+            activityRepository().storeActivities(activities);
         }
     }
 

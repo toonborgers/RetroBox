@@ -2,6 +2,8 @@ package be.cegeka.retrobox.db;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,36 @@ public class ActivityRepository {
         values.put(RetroBoxContract.Activities.COL_MATERIALS, activity.getMaterials());
         retroBoxDBHelper.getWritableDatabase()
                 .insert(RetroBoxContract.Activities.TABLE_NAME, null, values);
+    }
+
+    public void storeActivities(List<Activity> activities) {
+        String sql = new StringBuilder()
+                .append("INSERT INTO " + RetroBoxContract.Activities.TABLE_NAME)
+                .append(" (")
+                .append(RetroBoxContract.Activities.COL_NAME + ",")
+                .append(RetroBoxContract.Activities.COL_ACTIVITY_TYPE_ID + ",")
+                .append(RetroBoxContract.Activities.COL_DESCRIPTION + ",")
+                .append(RetroBoxContract.Activities.COL_DURATION + ",")
+                .append(RetroBoxContract.Activities.COL_HOWTO + ",")
+                .append(RetroBoxContract.Activities.COL_MATERIALS + ")")
+                .append(" VALUES (?,?,?,?,?,?);")
+                .toString();
+        SQLiteDatabase db = retroBoxDBHelper.getWritableDatabase();
+        SQLiteStatement stmt = db.compileStatement(sql);
+        db.beginTransaction();
+        for (Activity act : activities) {
+            stmt.clearBindings();
+            stmt.bindString(1, act.getName());
+            stmt.bindLong(2, act.getActivityTypeCode());
+            stmt.bindString(3, act.getDescription());
+            stmt.bindLong(4, act.getDurationMinutes());
+            stmt.bindString(5, act.getHowto());
+            stmt.bindString(6, act.getMaterials());
+            stmt.execute();
+        }
+        db.setTransactionSuccessful();
+        db.endTransaction();
+
     }
 
     public List<Activity> getActivitiesOfType(int activityTypeCode) {
