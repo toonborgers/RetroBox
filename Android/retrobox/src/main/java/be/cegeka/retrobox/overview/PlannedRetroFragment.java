@@ -13,7 +13,6 @@ import android.widget.ListView;
 import java.util.List;
 
 import be.cegeka.retrobox.BeanProvider;
-import be.cegeka.retrobox.OverviewActivity;
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.domain.Retro;
 

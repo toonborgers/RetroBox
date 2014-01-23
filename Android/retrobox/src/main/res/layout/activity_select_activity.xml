@@ -3,5 +3,5 @@
     android:id="@+id/activity_select_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="be.cegeka.retrobox.SelectActivityActivity"
+    tools:context="be.cegeka.retrobox.newretro.selectactivity.SelectActivityActivity"
     tools:ignore="MergeRootFrame" />

@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import be.cegeka.retrobox.R;
-import be.cegeka.retrobox.SelectActivityActivity;
+import be.cegeka.retrobox.newretro.selectactivity.SelectActivityActivity;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 

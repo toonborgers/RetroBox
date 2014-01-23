@@ -37,6 +37,4 @@ public class ActivityExecution {
         execution.activityTypeCode = activityTypeCode;
         return execution;
     }
-
-
 }

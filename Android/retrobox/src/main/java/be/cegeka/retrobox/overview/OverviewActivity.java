@@ -1,4 +1,4 @@
-package be.cegeka.retrobox;
+package be.cegeka.retrobox.overview;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -9,7 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import be.cegeka.retrobox.overview.OverviewPagerAdapter;
+import be.cegeka.retrobox.AboutActivity;
+import be.cegeka.retrobox.R;
+import be.cegeka.retrobox.newretro.NewRetroActivity;
 import be.cegeka.retrobox.util.DepthPageTransformer;
 
 import static be.cegeka.retrobox.BeanProvider.retroCreationContext;

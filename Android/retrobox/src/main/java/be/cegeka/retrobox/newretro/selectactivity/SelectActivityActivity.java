@@ -1,11 +1,10 @@
-package be.cegeka.retrobox;
+package be.cegeka.retrobox.newretro.selectactivity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
+import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.newretro.NewRetroActivitiesFragment;
-import be.cegeka.retrobox.newretro.selectactivity.ActivityDetailFragment;
-import be.cegeka.retrobox.newretro.selectactivity.ActivityOverviewFragment;
 
 public class SelectActivityActivity extends Activity implements ActivityOverviewFragment.ActivitySelectedListener {
     private int activityType;
@@ -13,7 +12,7 @@ public class SelectActivityActivity extends Activity implements ActivityOverview
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select);
+        setContentView(R.layout.activity_select_activity);
         activityType = getIntent().getIntExtra(NewRetroActivitiesFragment.KEY_ACTIVITY_TYPE, 1);
 
         if (savedInstanceState == null) {
