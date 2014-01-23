@@ -5,16 +5,16 @@ import org.joda.time.format.DateTimeFormatter;
 
 import be.cegeka.retrobox.domain.Activity;
 import be.cegeka.retrobox.domain.Retro;
-import be.cegeka.retrobox.newretro.NewRetroController;
+import be.cegeka.retrobox.newretro.RetroCreationContext;
 
 public class ActivityOverviewHelper {
     private static final String EMPTY_STRING = "";
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormat.forPattern("HH:mm");
 
-    private NewRetroController newRetroController;
+    private RetroCreationContext retroCreationContext;
 
-    public ActivityOverviewHelper(NewRetroController newRetroController) {
-        this.newRetroController = newRetroController;
+    public ActivityOverviewHelper(RetroCreationContext retroCreationContext) {
+        this.retroCreationContext = retroCreationContext;
     }
 
     public String determineActivityStartTimeText(Activity activity) {
@@ -34,6 +34,6 @@ public class ActivityOverviewHelper {
     }
 
     private Retro currentRetro() {
-        return newRetroController.currentRetro();
+        return retroCreationContext.currentRetro();
     }
 }

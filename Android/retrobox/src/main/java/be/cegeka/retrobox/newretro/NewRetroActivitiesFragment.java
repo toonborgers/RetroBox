@@ -12,9 +12,9 @@ import be.cegeka.retrobox.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-import static be.cegeka.retrobox.BeanProvider.newRetroController;
+import static be.cegeka.retrobox.BeanProvider.retroCreationContext;
 
-public class NewRetroActivitiesFragment extends Fragment implements NewRetroController.TimeSetListener {
+public class NewRetroActivitiesFragment extends Fragment implements RetroCreationContext.TimeSetListener {
     @InjectView(R.id.activities_list)
     ListView activitiesList;
     @InjectView(R.id.activities_total_retro_time)
@@ -27,7 +27,7 @@ public class NewRetroActivitiesFragment extends Fragment implements NewRetroCont
         View mainView = inflater.inflate(R.layout.fragment_new_activities, container, false);
         ButterKnife.inject(this, mainView);
 
-        adapter = new NewRetroActivitiesAdapter(getActivity(), newRetroController().currentActivities());
+        adapter = new NewRetroActivitiesAdapter(getActivity(), retroCreationContext().currentActivities());
         activitiesList.setAdapter(adapter);
         totalTimeView.setText("0");
         return mainView;
@@ -36,19 +36,19 @@ public class NewRetroActivitiesFragment extends Fragment implements NewRetroCont
     @Override
     public void onAttach(android.app.Activity activity) {
         super.onAttach(activity);
-        newRetroController().setTimeSetListener(this);
+        retroCreationContext().setTimeSetListener(this);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        newRetroController().clearTimeSetListener();
+        retroCreationContext().clearTimeSetListener();
     }
 
     @Override
     public void timeSet() {
         adapter.clear();
-        adapter.addAll(newRetroController().currentActivities());
+        adapter.addAll(retroCreationContext().currentActivities());
         adapter.notifyDataSetChanged();
     }
 }

@@ -11,12 +11,12 @@ import be.cegeka.retrobox.domain.Activity;
 import be.cegeka.retrobox.domain.Retro;
 import be.cegeka.retrobox.domain.RetroFactory;
 
-public class NewRetroController {
+public class RetroCreationContext {
     private RetroRepository retroRepository;
     private Retro.Builder currentRetroBuilder;
     private TimeSetListener listener;
 
-    public NewRetroController(RetroRepository retroRepository) {
+    public RetroCreationContext(RetroRepository retroRepository) {
         this.retroRepository = retroRepository;
     }
 

@@ -5,7 +5,7 @@ import android.content.Context;
 import be.cegeka.retrobox.db.ActivityRepository;
 import be.cegeka.retrobox.db.RetroBoxDBHelper;
 import be.cegeka.retrobox.db.RetroRepository;
-import be.cegeka.retrobox.newretro.NewRetroController;
+import be.cegeka.retrobox.newretro.RetroCreationContext;
 import be.cegeka.retrobox.util.ActivityImporter;
 import be.cegeka.retrobox.util.ActivityOverviewHelper;
 
@@ -17,7 +17,7 @@ public class BeanProvider {
     }
 
     private static RetroRepository retroRepository;
-    private static NewRetroController newRetroController;
+    private static RetroCreationContext retroCreationContext;
     private static RetroBoxDBHelper retroBoxDBHelper;
     private static ActivityRepository activityRepository;
     private static ActivityImporter activityImporter;
@@ -44,11 +44,11 @@ public class BeanProvider {
         return activityRepository;
     }
 
-    public static NewRetroController newRetroController() {
-        if (newRetroController == null) {
-            newRetroController = new NewRetroController(retroRepository());
+    public static RetroCreationContext retroCreationContext() {
+        if (retroCreationContext == null) {
+            retroCreationContext = new RetroCreationContext(retroRepository());
         }
-        return newRetroController;
+        return retroCreationContext;
     }
 
     public static ActivityImporter activityImporter() {
@@ -60,7 +60,7 @@ public class BeanProvider {
 
     public static ActivityOverviewHelper activityOverviewHelper() {
         if (activityOverviewHelper == null) {
-            activityOverviewHelper = new ActivityOverviewHelper(newRetroController());
+            activityOverviewHelper = new ActivityOverviewHelper(retroCreationContext());
         }
         return activityOverviewHelper;
     }

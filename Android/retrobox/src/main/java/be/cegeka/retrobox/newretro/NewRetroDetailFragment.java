@@ -27,7 +27,7 @@ import be.cegeka.retrobox.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-import static be.cegeka.retrobox.BeanProvider.newRetroController;
+import static be.cegeka.retrobox.BeanProvider.retroCreationContext;
 
 public class NewRetroDetailFragment extends Fragment implements CalendarDatePickerDialog.OnDateSetListener, RadialTimePickerDialog.OnTimeSetListener {
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd-MM-yyyy");
@@ -107,13 +107,13 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
                 if (etName.hasFocus()) {
                     etName.clearFocus();
                 }
-                if (!newRetroController().currentRetroIsValid()) {
+                if (!retroCreationContext().currentRetroIsValid()) {
                     Toast.makeText(getActivity(), R.string.new_retro_name_error, Toast.LENGTH_LONG).show();
                 } else {
-                    if (newRetroController().storeCurrentRetro()) {
+                    if (retroCreationContext().storeCurrentRetro()) {
                         getActivity().setResult(Activity.RESULT_OK);
                         getActivity().finish();
-                        newRetroController().doneCreatingNewRetro();
+                        retroCreationContext().doneCreatingNewRetro();
                     }
                 }
             }
@@ -125,7 +125,7 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (!hasFocus) {
-                    newRetroController().retroNameSet(etName.getText().toString().trim());
+                    retroCreationContext().retroNameSet(etName.getText().toString().trim());
                 }
             }
         });
@@ -133,7 +133,7 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (!hasFocus) {
-                    newRetroController().retroPlaceSet(etPlace.getText().toString().trim());
+                    retroCreationContext().retroPlaceSet(etPlace.getText().toString().trim());
                 }
             }
         });
@@ -160,7 +160,7 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
             Toast.makeText(getActivity(), R.string.new_retro_date_error, Toast.LENGTH_LONG).show();
         } else {
             tvDate.setText(DATE_FORMAT.print(parsedDate));
-            newRetroController().retroDateSet(parsedDate);
+            retroCreationContext().retroDateSet(parsedDate);
         }
     }
 
@@ -168,6 +168,6 @@ public class NewRetroDetailFragment extends Fragment implements CalendarDatePick
     public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
         LocalTime parsedTime = new LocalTime(hourOfDay, minute);
         tvTime.setText(TIME_FORMAT.print(parsedTime));
-        newRetroController().retroTimeSet(parsedTime);
+        retroCreationContext().retroTimeSet(parsedTime);
     }
 }
