@@ -21,8 +21,20 @@ public class ActivityExecution {
         return activity;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public int getActivityTypeCode() {
         return activityTypeCode;
+    }
+
+    public DateTime getStart() {
+        return start;
+    }
+
+    public DateTime getEnd() {
+        return end;
     }
 
     public static ActivityExecution forActivity(Activity activity) {

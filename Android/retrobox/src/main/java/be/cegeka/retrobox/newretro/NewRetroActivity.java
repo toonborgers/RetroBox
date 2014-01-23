@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.inputmethod.InputMethodManager;
 
+import be.cegeka.retrobox.BeanProvider;
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.util.DepthPageTransformer;
 
@@ -41,6 +42,7 @@ public class NewRetroActivity extends FragmentActivity implements ActionBar.TabL
             public void onPageSelected(int position) {
                 actionBar.setSelectedNavigationItem(position);
                 inputMethodManager.hideSoftInputFromWindow(viewPager.getWindowToken(), 0);
+                BeanProvider.retroCreationContext().moveToPage(position);
             }
         });
 

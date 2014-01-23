@@ -28,6 +28,7 @@ public class NewRetroActivitiesFragment extends Fragment implements RetroCreatio
     TextView totalTimeView;
 
     private NewRetroActivitiesAdapter adapter;
+    private boolean isActive = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -61,12 +62,24 @@ public class NewRetroActivitiesFragment extends Fragment implements RetroCreatio
         totalTimeView.setText(String.format(getString(R.string.activities_total_retro), activityOverviewHelper().totalRetroTime()));
     }
 
+    @Override
+    public void activate() {
+        isActive = true;
+    }
+
+    @Override
+    public void deactivate() {
+        isActive = false;
+    }
+
     private class ActivitiesListClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-            Intent intent = new Intent(getActivity(), SelectActivityActivity.class);
-            intent.putExtra(KEY_ACTIVITY_TYPE, adapter.getItem(position).getActivityTypeCode());
-            startActivityForResult(intent, REQUEST_CODE_SELECT_ACTIVITY);
+            if (isActive) {
+                Intent intent = new Intent(getActivity(), SelectActivityActivity.class);
+                intent.putExtra(KEY_ACTIVITY_TYPE, adapter.getItem(position).getActivityTypeCode());
+                startActivityForResult(intent, REQUEST_CODE_SELECT_ACTIVITY);
+            }
         }
     }
 }

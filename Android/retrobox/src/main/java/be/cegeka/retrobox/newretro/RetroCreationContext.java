@@ -62,7 +62,7 @@ public class RetroCreationContext {
     }
 
     public boolean storeCurrentRetro() {
-        return retroRepository.store(currentRetro());
+        return retroRepository.insert(currentRetro());
     }
 
     public void doneCreatingNewRetro() {
@@ -96,7 +96,21 @@ public class RetroCreationContext {
         }
     }
 
+    public void moveToPage(int position) {
+        if (retroActivitiesScreen != null) {
+            if (position == 1) {
+                retroActivitiesScreen.activate();
+            } else {
+                retroActivitiesScreen.deactivate();
+            }
+        }
+    }
+
     public interface RetroActivitiesScreen {
         void activitiesInfoChanged();
+
+        void activate();
+
+        void deactivate();
     }
 }
