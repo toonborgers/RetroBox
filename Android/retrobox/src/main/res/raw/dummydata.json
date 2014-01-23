@@ -27,7 +27,7 @@
 		"activityType": 1,
 		"name": "ESVP",
 		"description": "How do participants feel at the retro: Explorer, Shopper, Vacationer, or Prisoner?",
-		"howto": "Prepare a flipchart or whiteboard with areas for E, S, V, and P. Explain the concept: * Explorer: Eager to dive in and research what did and didn\u0027t work and how to improve. * Shopper: Positive attitude. Happy if one good things comes out. * Vacationer: Reluctant to actively take part but the retro beats the regular work. * Prisoner: Only attend because they (feel they) must. Take a poll (anonymously, using sticky notes). Count out the answers and keep track on the flipchart for all to see. Ask what people make of the data. If there\u0027s a majority of Vacationers or Prisoners consider using the retro to discuss this finding.",
+		"howto": "Prepare a flipchart or whiteboard with areas for E, S, V, and P. Explain the concept: \n* Explorer: Eager to dive in and research what did and didn\u0027t work and how to improve. \n* Shopper: Positive attitude. Happy if one good things comes out. \n* Vacationer: Reluctant to actively take part but the retro beats the regular work. \n* Prisoner: Only attend because they (feel they) must. \nTake a poll (anonymously, using sticky notes). Count out the answers and keep track on the flipchart for all to see. Ask what people make of the data. If there\u0027s a majority of Vacationers or Prisoners consider using the retro to discuss this finding.",
 		"materials": "Flipchart/whiteboard, sticky notes, markers",
 		"durationMinutes": 10
 	},
@@ -59,7 +59,7 @@
 		"activityType": 2,
 		"name": "Loved, Learned, Lacked, Longed for",
 		"description": "Explore what people loved, learned, lacked and longed for individually",
-		"howto": "Each person brainstorms individually for each of these 4 questions: * What I Loved * What I Learned * What I Lacked * What I Longed For Collect the answers, either stickies on flip charts or in a digital tool if you\u0027re distributed. Form 4 subgroups, one for each L, read all notes, identify patterns and report their findings to the group. Use this as input for the next phase.",
+		"howto": "Each person brainstorms individually for each of these 4 questions: \n* What I Loved \n* What I Learned \n* What I Lacked \n* What I Longed For\n Collect the answers, either stickies on flip charts or in a digital tool if you\u0027re distributed. Form 4 subgroups, one for each L, read all notes, identify patterns and report their findings to the group. Use this as input for the next phase.",
 		"materials": "Stickies, markers, flip charts",
 		"durationMinutes": 20
 	},
@@ -107,7 +107,7 @@
 		"activityType": 3,
 		"name": "5 why\u0027s",
 		"description": "Drill down to the root cause of problems by repeatedly asking \u0027Why?\u0027",
-		"howto": "Divide the participants into small groups (\u003c\u003d 4 people) and give each group one of the top identified issues. Instructions for the group:* One person asks the others \u0027Why did that happen?\u0027 repeatedly to find the root cause or a chain of events * Record the root causes (often the answer to the 5th \u0027Why?\u0027) Let the groups share their findings.",
+		"howto": "Divide the participants into small groups (\u003c\u003d 4 people) and give each group one of the top identified issues. Instructions for the group:\n* One person asks the others \u0027Why did that happen?\u0027 repeatedly to find the root cause or a chain of events \n* Record the root causes (often the answer to the 5th \u0027Why?\u0027) \nLet the groups share their findings.",
 		"materials": "Paper, markers",
 		"durationMinutes": 15
 	},
@@ -123,7 +123,7 @@
 		"activityType": 4,
 		"name": "Low Hanging Fruit",
 		"description": "Visualize promise and ease of possible courses of actions to help pick",
-		"howto": "Reveal a previously drawn tree. Hand out round index cards and instruct participants to write down the actions they would like to take - one per card. When everyone\u0027s finished, collect the cards, shuffle and read them out one by one. Place each \u0027fruit\u0027 according to the participants\u0027 assessment: * Is it easy to do? Place it lower. Hard? More to the top. * Does it seem very beneficial? Place it more to the left. Value is dubious at best? To the right. The straightforward choice is to pick the bottom left fruit as action items. If this is not consensus, you can either have a short discussion to agree on some actions or dot vote.",
+		"howto": "Reveal a previously drawn tree. Hand out round index cards and instruct participants to write down the actions they would like to take - one per card. When everyone\u0027s finished, collect the cards, shuffle and read them out one by one. Place each \u0027fruit\u0027 according to the participants\u0027 assessment: \n* Is it easy to do? Place it lower. Hard? More to the top. \n* Does it seem very beneficial?\n Place it more to the left. Value is dubious at best? To the right. The straightforward choice is to pick the bottom left fruit as action items. If this is not consensus, you can either have a short discussion to agree on some actions or dot vote.",
 		"materials": "Tree, stickies, markers",
 		"durationMinutes": 20
 	},

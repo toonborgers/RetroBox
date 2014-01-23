@@ -15,7 +15,7 @@ public class ActivityProgressBar extends View {
 
     public ActivityProgressBar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        progress = 0f;
+        progress = 100f;
     }
 
     public void setBarColor(int barColor) {
