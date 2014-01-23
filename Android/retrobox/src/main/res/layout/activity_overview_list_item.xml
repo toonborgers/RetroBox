@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp">
+
+    <TextView
+        android:id="@+id/activity_overview_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activity_overview_item_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/activity_gray_text"
+        android:layout_below="@id/activity_overview_item_name" />
+
+    <TextView
+        android:paddingLeft="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/activity_gray_text"
+        android:text="@string/select_activity_minutes"
+        android:layout_below="@id/activity_overview_item_name"
+        android:layout_toRightOf="@id/activity_overview_item_duration"
+        android:layout_alignBottom="@id/activity_overview_item_duration" />
+</RelativeLayout>

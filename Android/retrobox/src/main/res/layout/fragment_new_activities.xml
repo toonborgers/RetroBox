@@ -17,26 +17,12 @@
         android:divider="#0000"
         android:dividerHeight="7dp" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/activities_total_retro_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textColor="@color/activity_total_time"
-            android:text="@string/activities_total_retro" />
-
-        <TextView
-            android:id="@+id/activities_total_retro_time"
-            android:paddingLeft="3dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textColor="@color/activity_total_time" />
-    </LinearLayout>
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/activity_total_time" />
 
 </LinearLayout>

@@ -1,20 +1,27 @@
 package be.cegeka.retrobox.newretro;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import be.cegeka.retrobox.R;
+import be.cegeka.retrobox.SelectActivityActivity;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
+import static be.cegeka.retrobox.BeanProvider.activityOverviewHelper;
 import static be.cegeka.retrobox.BeanProvider.retroCreationContext;
 
-public class NewRetroActivitiesFragment extends Fragment implements RetroCreationContext.TimeSetListener {
+public class NewRetroActivitiesFragment extends Fragment implements RetroCreationContext.RetroActivitiesScreen {
+    public static final String KEY_ACTIVITY_TYPE = "activity_type";
+    public static final int REQUEST_CODE_SELECT_ACTIVITY = 1;
+
     @InjectView(R.id.activities_list)
     ListView activitiesList;
     @InjectView(R.id.activities_total_retro_time)
@@ -29,26 +36,37 @@ public class NewRetroActivitiesFragment extends Fragment implements RetroCreatio
 
         adapter = new NewRetroActivitiesAdapter(getActivity(), retroCreationContext().currentActivities());
         activitiesList.setAdapter(adapter);
-        totalTimeView.setText("0");
+        totalTimeView.setText(String.format(getString(R.string.activities_total_retro), "0"));
+        activitiesList.setOnItemClickListener(new ActivitiesListClickListener());
         return mainView;
     }
 
     @Override
     public void onAttach(android.app.Activity activity) {
         super.onAttach(activity);
-        retroCreationContext().setTimeSetListener(this);
+        retroCreationContext().setRetroActivitiesScreen(this);
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        retroCreationContext().clearTimeSetListener();
+        retroCreationContext().unsetScreen();
     }
 
     @Override
-    public void timeSet() {
+    public void activitiesInfoChanged() {
         adapter.clear();
         adapter.addAll(retroCreationContext().currentActivities());
         adapter.notifyDataSetChanged();
+        totalTimeView.setText(String.format(getString(R.string.activities_total_retro), activityOverviewHelper().totalRetroTime()));
+    }
+
+    private class ActivitiesListClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+            Intent intent = new Intent(getActivity(), SelectActivityActivity.class);
+            intent.putExtra(KEY_ACTIVITY_TYPE, adapter.getItem(position).getActivityTypeCode());
+            startActivityForResult(intent, REQUEST_CODE_SELECT_ACTIVITY);
+        }
     }
 }

@@ -13,20 +13,22 @@ import java.util.List;
 import java.util.Random;
 
 import be.cegeka.retrobox.R;
-import be.cegeka.retrobox.domain.Activity;
+import be.cegeka.retrobox.domain.ActivityExecution;
+import be.cegeka.retrobox.domain.ActivityType;
 import be.cegeka.retrobox.ui.ActivityProgressBar;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 import static be.cegeka.retrobox.BeanProvider.activityOverviewHelper;
+import static be.cegeka.retrobox.domain.ActivityType.forTypeCode;
 
-public class NewRetroActivitiesAdapter extends ArrayAdapter<Activity> {
+public class NewRetroActivitiesAdapter extends ArrayAdapter<ActivityExecution> {
     private static final int DEFAULT_TITLE = R.string.activities_select_activity;
     private Context ctx;
-    private List<Activity> activities;
+    private List<ActivityExecution> activities;
     private LayoutInflater layoutInflater;
 
-    public NewRetroActivitiesAdapter(Context ctx, List<Activity> activities) {
+    public NewRetroActivitiesAdapter(Context ctx, List<ActivityExecution> activities) {
         super(ctx, R.layout.activity_list_item, activities);
         this.ctx = ctx;
         this.activities = activities;
@@ -42,8 +44,8 @@ public class NewRetroActivitiesAdapter extends ArrayAdapter<Activity> {
             resultView.setTag(new ViewHolder(resultView));
         }
 
-        Activity activity = activities.get(position);
-        Activity.ActivityType activityType = activity.getActivityType();
+        ActivityExecution execution = activities.get(position);
+        ActivityType activityType = forTypeCode(execution.getActivityTypeCode());
         int color = ctx.getResources().getColor(activityType.getColorResource());
 
         ViewHolder holder = (ViewHolder) resultView.getTag();
@@ -51,13 +53,13 @@ public class NewRetroActivitiesAdapter extends ArrayAdapter<Activity> {
         setProgressbarColor(holder, color);
         holder.itemType.setText(ctx.getResources().getString(activityType.getTitleResource()));
         holder.itemTitle.setTextColor(color);
-        if (activity.isEmpty()) {
+        if (execution.isEmpty()) {
             holder.itemTitle.setText(DEFAULT_TITLE);
         } else {
-            holder.itemTitle.setText(activity.getName());
+            holder.itemTitle.setText(execution.getActivity().getName());
         }
-        holder.startTime.setText(activityOverviewHelper().determineActivityStartTimeText(activity));
-        holder.endTime.setText(activityOverviewHelper().determineActivityEndTimeText(activity));
+        holder.startTime.setText(activityOverviewHelper().determineActivityStartTimeText(execution));
+        holder.endTime.setText(activityOverviewHelper().determineActivityEndTimeText(execution));
 
         return resultView;
     }

@@ -10,7 +10,7 @@ public class Retro {
     private String name;
     private DateTime time;
     private String location;
-    private Map<Integer, Activity> activities = new HashMap<Integer, Activity>();
+    private Map<Integer, ActivityExecution> activities = new HashMap<Integer, ActivityExecution>();
 
     private Retro() {
     }
@@ -31,7 +31,7 @@ public class Retro {
         return id;
     }
 
-    public Map<Integer, Activity> getActivities() {
+    public Map<Integer, ActivityExecution> getActivities() {
         return activities;
     }
 
@@ -62,7 +62,7 @@ public class Retro {
             return this;
         }
 
-        public Builder withActivities(Map<Integer, Activity> activities) {
+        public Builder withActivities(Map<Integer, ActivityExecution> activities) {
             instance.activities = activities;
             return this;
         }

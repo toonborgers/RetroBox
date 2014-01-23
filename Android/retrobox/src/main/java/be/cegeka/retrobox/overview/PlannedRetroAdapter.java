@@ -74,8 +74,7 @@ public class PlannedRetroAdapter extends ArrayAdapter<Retro> {
         View rowView = convertView;
         if (rowView == null) {
             rowView = layoutInflater.inflate(R.layout.overview_list_item, null);
-            ViewHolder viewHolder = new ViewHolder(rowView);
-            rowView.setTag(viewHolder);
+            rowView.setTag(new ViewHolder(rowView));
         }
         Retro retro = plannedRetros.get(position);
         ViewHolder viewHolder = (ViewHolder) rowView.getTag();

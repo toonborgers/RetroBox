@@ -13,8 +13,9 @@ public class RetroBoxContract {
         public static final String COL_TIME = "time";
         public static final String COL_LOCATION = "location";
 
+        public static final String DROP = "DROP TABLE IF EXISTS " + TABLE_NAME;
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE IF NOT EXISTS ")
+                .append("CREATE TABLE ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
@@ -30,8 +31,9 @@ public class RetroBoxContract {
         public static final String COL_TYPE_ID = "typeId";
         public static final String COL_DESCRIPTION = "description";
 
+        public static final String DROP = "DROP TABLE IF EXISTS " + TABLE_NAME;
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE IF NOT EXISTS ")
+                .append("CREATE TABLE ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
@@ -50,8 +52,9 @@ public class RetroBoxContract {
         public static final String COL_HOWTO = "howto";
         public static final String COL_ACTIVITY_TYPE_ID = "activityTypeId";
 
+        public static final String DROP = "DROP TABLE IF EXISTS " + TABLE_NAME;
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE IF NOT EXISTS ")
+                .append("CREATE TABLE ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
@@ -65,19 +68,24 @@ public class RetroBoxContract {
                 .toString();
     }
 
-    public static final class RetroActivities implements BaseColumns {
-        public static final String TABLE_NAME = "retroActivities";
+    public static final class ActivityExecutions implements BaseColumns {
+        public static final String TABLE_NAME = "activityExecutions";
 
         public static final String COL_RETRO_ID = "retroId";
         public static final String COL_ACTIVITY_ID = "activityId";
+        public static final String COL_START = "start";
+        public static final String COL_END = "end";
 
+        public static final String DROP = "DROP TABLE IF EXISTS " + TABLE_NAME;
         public static final String CREATE = new StringBuilder()
-                .append("CREATE TABLE IF NOT EXISTS ")
+                .append("CREATE TABLE ")
                 .append(TABLE_NAME)
                 .append("(")
                 .append(_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, ")
                 .append(COL_RETRO_ID + " INTEGER, ")
                 .append(COL_ACTIVITY_ID + " INTEGER, ")
+                .append(COL_START + " INTEGER, ")
+                .append(COL_END + " INTEGER, ")
                 .append("FOREIGN KEY (" + COL_RETRO_ID + ") REFERENCES " + Retros.TABLE_NAME + "(" + Retros._ID + "),")
                 .append("FOREIGN KEY (" + COL_ACTIVITY_ID + ") REFERENCES " + Activities.TABLE_NAME + "(" + Activities._ID + "))")
                 .toString();
