@@ -16,7 +16,7 @@ public class ActivityOverviewFragment extends ListFragment {
     private ActivitySelectedListener listener;
     private ActivityOverviewAdapter adapter;
 
-    private ActivityOverviewFragment() {
+    public ActivityOverviewFragment() {
 
     }
 

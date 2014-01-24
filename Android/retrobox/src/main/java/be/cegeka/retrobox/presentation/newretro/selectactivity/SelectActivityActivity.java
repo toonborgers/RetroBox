@@ -9,9 +9,12 @@ import android.view.MenuItem;
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.presentation.AboutActivity;
 import be.cegeka.retrobox.presentation.newretro.activityoverview.NewRetroActivitiesFragment;
+import be.cegeka.retrobox.presentation.newretro.newactivity.NewActivityActivity;
 
 public class SelectActivityActivity extends Activity implements ActivityOverviewFragment.ActivitySelectedListener {
     public static final String DETAIL_FRAGMENT = "detailfragment";
+    public static final String ACTIVITY_TYPE = "ACTIVITY_TYPE";
+    public static final int REQUEST_CODE_NEW_ACTIVITY = 5;
     private int activityType;
     private Menu menu;
     private MenuItem addNewActivityItem;
@@ -65,6 +68,25 @@ public class SelectActivityActivity extends Activity implements ActivityOverview
         this.menu = menu;
         addNewActivityItem = menu.findItem(R.id.activity_overview_new);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if (item.getItemId() == R.id.activity_overview_new) {
+            Intent intent = new Intent(this, NewActivityActivity.class);
+            intent.putExtra(ACTIVITY_TYPE, activityType);
+            startActivityForResult(intent, REQUEST_CODE_NEW_ACTIVITY);
+            return true;
+        }
+        return super.onMenuItemSelected(featureId, item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (REQUEST_CODE_NEW_ACTIVITY == requestCode && resultCode == RESULT_OK) {
+            finish();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override

@@ -34,4 +34,5 @@
     <string name="activity_detail_select">Select this activity</string>
 
     <string name="new_activity_title">Create new activity</string>
+    <string name="new_activity_error">Please fill out all fields</string>
 </resources>

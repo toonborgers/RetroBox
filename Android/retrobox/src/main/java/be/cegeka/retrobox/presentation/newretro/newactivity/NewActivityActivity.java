@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import be.cegeka.retrobox.R;
+import be.cegeka.retrobox.presentation.newretro.selectactivity.SelectActivityActivity;
 
 public class NewActivityActivity extends Activity {
 
@@ -14,7 +15,7 @@ public class NewActivityActivity extends Activity {
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new NewActivityFragment())
+                    .add(R.id.container, NewActivityFragment.newInstance(getIntent().getIntExtra(SelectActivityActivity.ACTIVITY_TYPE, 1)))
                     .commit();
         }
     }

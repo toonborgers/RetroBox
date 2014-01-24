@@ -35,7 +35,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="be.cegeka.retrobox.presentation.newretro.newactivity.NewActivityActivity"
-            android:label="@string/new_activity_title"></activity>
+            android:label="@string/new_activity_title"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

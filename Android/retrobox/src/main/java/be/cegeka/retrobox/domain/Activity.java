@@ -1,7 +1,5 @@
 package be.cegeka.retrobox.domain;
 
-import static be.cegeka.retrobox.domain.ActivityType.forTypeCode;
-
 public class Activity {
 
     private int id;
@@ -11,7 +9,6 @@ public class Activity {
     private String howto;
     private String materials;
     private int durationMinutes;
-    private boolean isEmpty;
 
     private Activity() {
     }
@@ -44,12 +41,9 @@ public class Activity {
         return activityTypeCode;
     }
 
-    public boolean isEmpty() {
-        return isEmpty;
-    }
 
-    public ActivityType getActivityType() {
-        return forTypeCode(activityTypeCode);
+    public void setId(int id) {
+        this.id = id;
     }
 
     public static class Builder {
@@ -92,11 +86,6 @@ public class Activity {
 
         public Builder withActivityTypeCode(int activityTypeCode) {
             instance.activityTypeCode = activityTypeCode;
-            return this;
-        }
-
-        public Builder withIsEmpty(boolean isEmpty) {
-            instance.isEmpty = isEmpty;
             return this;
         }
 

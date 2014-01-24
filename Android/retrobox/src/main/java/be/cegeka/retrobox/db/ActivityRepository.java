@@ -25,7 +25,7 @@ public class ActivityRepository {
                 .insert(RetroBoxContract.ActivityTypes.TABLE_NAME, null, values);
     }
 
-    public void storeActivity(Activity activity) {
+    public long storeActivity(Activity activity) {
         ContentValues values = new ContentValues();
         values.put(RetroBoxContract.Activities.COL_NAME, activity.getName());
         values.put(RetroBoxContract.Activities.COL_ACTIVITY_TYPE_ID, activity.getActivityTypeCode());
@@ -33,7 +33,7 @@ public class ActivityRepository {
         values.put(RetroBoxContract.Activities.COL_DURATION, activity.getDurationMinutes());
         values.put(RetroBoxContract.Activities.COL_HOWTO, activity.getHowto());
         values.put(RetroBoxContract.Activities.COL_MATERIALS, activity.getMaterials());
-        retroBoxDBHelper.getWritableDatabase()
+        return retroBoxDBHelper.getWritableDatabase()
                 .insert(RetroBoxContract.Activities.TABLE_NAME, null, values);
     }
 
@@ -76,7 +76,7 @@ public class ActivityRepository {
                         new String[]{String.valueOf(activityTypeCode)},
                         null,
                         null,
-                        RetroBoxContract.Activities.COL_DESCRIPTION + " DESC");
+                        RetroBoxContract.Activities.COL_DESCRIPTION + " ASC");
 
         List<Activity> result = new ArrayList<Activity>();
         cursor.moveToFirst();
