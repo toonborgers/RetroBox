@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro;
+package be.cegeka.retrobox.presentation.newretro;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -6,6 +6,8 @@ import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
 
 import be.cegeka.retrobox.R;
+import be.cegeka.retrobox.presentation.newretro.activityoverview.NewRetroActivitiesFragment;
+import be.cegeka.retrobox.presentation.newretro.retrodetail.NewRetroDetailFragment;
 
 public class NewRetroPagerAdapter extends FragmentPagerAdapter {
     private Context ctx;

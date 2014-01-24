@@ -26,13 +26,12 @@
     <string name="activities_retro_of_retro">Retro of the retro</string>
     <string name="about_about_cegeka">About Cegeka</string>
     <string name="about_description">&lt;b>Cegeka&lt;/b> is a successful independent ICT company in the Benelux and helps its customers with the implementation and integration of ICT infrastructure, secondment of IT specialists, development and implementation of business applications, and outsourcing services. As a hybrid cloud provider, Cegeka hosts its customers IT in own data centers in Hasselt (B), Louvain (B), Veenendaal (NL) and Poland, while integrating public cloud services.&lt;br/>&lt;br/>Cegeka was founded in 1992 and currently employs 2100 people. In 2012 Cegeka outperformed the market and reported a turnover growth of 8%: 214 million euro compared to 198 m in 2011.Cegeka is active in Belgium, The Netherlands, Germany, France, Luxemburg, Poland and Romania.&lt;br/>&lt;br/>Currently, our ambition is to become one of the main independent IT service suppliers in the Benelux. We want to focus on autonomous growth first and make growth-oriented strategic acquisitions as necessary. We are close to our local customers thanks to our branches across the Benelux. &lt;b>In close cooperation&lt;/b> is our lifestyle. It is an integral part of Cegeka’s unique DNA!&lt;br/>&lt;br/>We assist our customers with a broad range of integrated IT solutions:&lt;br/>&lt;br/>* &lt;b>Professional services:&lt;/b> our consultants, project managers and IT specialists are ready for short-term or long-term assignments&lt;br/>* &lt;b>Application solutions:&lt;/b> design, (custom) development and implementation of business and enterprise applications, portals and online solutions.&lt;br/>* &lt;b>Infrastructure solutions:&lt;/b> for the realization of cloud or other infrastructure projects or migrations, including 24/7 (remote) management.&lt;br/>* &lt;b>Outsourcing solutions:&lt;/b> for complete infrastructure management, workplaces and/or application environments.</string>
-
     <string name="select_activity_title">Select activity</string>
     <string name="select_activity_minutes"> minutes</string>
-
     <string name="activity_detail_materials">Materials needed</string>
     <string name="activity_detail_duration">Duration</string>
     <string name="activity_detail_duration_value">%1$d minutes</string>
     <string name="activity_detail_select">Select this activity</string>
 
+    <string name="new_activity_title">Create new activity</string>
 </resources>

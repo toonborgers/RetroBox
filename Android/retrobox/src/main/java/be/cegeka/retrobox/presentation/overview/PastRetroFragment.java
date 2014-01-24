@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.overview;
+package be.cegeka.retrobox.presentation.overview;
 
 import android.app.ListFragment;
 import android.os.Bundle;

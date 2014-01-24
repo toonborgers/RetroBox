@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.overview;
+package be.cegeka.retrobox.presentation.overview;
 
 import android.app.Activity;
 import android.app.ListFragment;
@@ -12,9 +12,9 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import be.cegeka.retrobox.BeanProvider;
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.domain.Retro;
+import be.cegeka.retrobox.infrastructure.BeanProvider;
 
 public class PlannedRetroFragment extends ListFragment implements OverviewActivity.PlannedRetrosChangeListener {
     private static final String TAG = PlannedRetroFragment.class.getSimpleName();

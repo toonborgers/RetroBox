@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.layout;
+package be.cegeka.retrobox.presentation.layout;
 
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;

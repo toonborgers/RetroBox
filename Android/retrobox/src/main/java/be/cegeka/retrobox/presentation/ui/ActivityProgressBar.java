@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.ui;
+package be.cegeka.retrobox.presentation.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;

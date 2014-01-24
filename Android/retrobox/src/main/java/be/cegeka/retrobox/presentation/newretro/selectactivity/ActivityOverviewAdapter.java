@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro.selectactivity;
+package be.cegeka.retrobox.presentation.newretro.selectactivity;
 
 import android.content.Context;
 import android.view.LayoutInflater;

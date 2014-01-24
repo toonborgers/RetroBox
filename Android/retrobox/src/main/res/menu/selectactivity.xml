@@ -5,4 +5,8 @@
         android:id="@+id/select_activity_info"
         android:icon="@drawable/about_icon"
         android:showAsAction="always" />
+    <item
+        android:id="@+id/activity_overview_new"
+        android:icon="@drawable/add_icon"
+        android:showAsAction="always" />
 </menu>

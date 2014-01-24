@@ -1,11 +1,11 @@
-package be.cegeka.retrobox;
+package be.cegeka.retrobox.infrastructure;
 
 import android.content.Context;
 
 import be.cegeka.retrobox.db.ActivityRepository;
 import be.cegeka.retrobox.db.RetroBoxDBHelper;
 import be.cegeka.retrobox.db.RetroRepository;
-import be.cegeka.retrobox.newretro.RetroCreationContext;
+import be.cegeka.retrobox.presentation.newretro.RetroCreationContext;
 import be.cegeka.retrobox.util.ActivityImporter;
 import be.cegeka.retrobox.util.ActivityOverviewHelper;
 

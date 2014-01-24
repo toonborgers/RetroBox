@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro.selectactivity;
+package be.cegeka.retrobox.presentation.newretro.selectactivity;
 
 import android.app.ListFragment;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 import be.cegeka.retrobox.domain.ActivityType;
 
-import static be.cegeka.retrobox.BeanProvider.activityRepository;
+import static be.cegeka.retrobox.infrastructure.BeanProvider.activityRepository;
 
 public class ActivityOverviewFragment extends ListFragment {
     public static final String KEY_TYPE = "type";

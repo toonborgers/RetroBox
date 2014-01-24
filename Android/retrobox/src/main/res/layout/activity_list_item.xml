@@ -35,7 +35,7 @@
             android:paddingLeft="7dp"
             android:textSize="20sp" />
 
-        <be.cegeka.retrobox.ui.ActivityProgressBar
+        <be.cegeka.retrobox.presentation.ui.ActivityProgressBar
             android:id="@+id/activity_item_progressbar"
             android:layout_width="match_parent"
             android:layout_height="14dp"

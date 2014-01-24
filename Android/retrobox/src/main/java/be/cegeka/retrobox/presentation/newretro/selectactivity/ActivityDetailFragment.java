@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro.selectactivity;
+package be.cegeka.retrobox.presentation.newretro.selectactivity;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import be.cegeka.retrobox.domain.Activity;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-import static be.cegeka.retrobox.BeanProvider.activityRepository;
-import static be.cegeka.retrobox.BeanProvider.retroCreationContext;
+import static be.cegeka.retrobox.infrastructure.BeanProvider.activityRepository;
+import static be.cegeka.retrobox.infrastructure.BeanProvider.retroCreationContext;
 
 public class ActivityDetailFragment extends Fragment implements View.OnClickListener {
     public static final String ACTIVITY_ID = "activityId";

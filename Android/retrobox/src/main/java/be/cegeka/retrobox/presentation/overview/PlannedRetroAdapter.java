@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.overview;
+package be.cegeka.retrobox.presentation.overview;
 
 import android.content.Context;
 import android.graphics.Color;

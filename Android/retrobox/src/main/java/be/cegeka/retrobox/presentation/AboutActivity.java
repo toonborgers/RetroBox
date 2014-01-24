@@ -1,4 +1,4 @@
-package be.cegeka.retrobox;
+package be.cegeka.retrobox.presentation;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.text.Html;
 import android.text.Spanned;
 import android.widget.TextView;
 
+import be.cegeka.retrobox.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 

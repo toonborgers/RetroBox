@@ -20,7 +20,7 @@ import java.util.Map;
 import be.cegeka.retrobox.R;
 import be.cegeka.retrobox.domain.Activity;
 
-import static be.cegeka.retrobox.BeanProvider.activityRepository;
+import static be.cegeka.retrobox.infrastructure.BeanProvider.activityRepository;
 
 public class ActivityImporter {
     private static final String TAG = ActivityImporter.class.getSimpleName();

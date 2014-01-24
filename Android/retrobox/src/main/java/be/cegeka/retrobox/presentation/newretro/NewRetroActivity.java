@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro;
+package be.cegeka.retrobox.presentation.newretro;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
@@ -11,9 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 
-import be.cegeka.retrobox.AboutActivity;
-import be.cegeka.retrobox.BeanProvider;
 import be.cegeka.retrobox.R;
+import be.cegeka.retrobox.infrastructure.BeanProvider;
+import be.cegeka.retrobox.presentation.AboutActivity;
 import be.cegeka.retrobox.util.DepthPageTransformer;
 
 public class NewRetroActivity extends FragmentActivity implements ActionBar.TabListener {

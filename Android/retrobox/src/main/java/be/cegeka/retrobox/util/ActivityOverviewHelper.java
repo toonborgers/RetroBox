@@ -6,7 +6,7 @@ import org.joda.time.format.DateTimeFormatter;
 
 import be.cegeka.retrobox.domain.ActivityExecution;
 import be.cegeka.retrobox.domain.Retro;
-import be.cegeka.retrobox.newretro.RetroCreationContext;
+import be.cegeka.retrobox.presentation.newretro.RetroCreationContext;
 
 import static be.cegeka.retrobox.domain.ActivityType.SETTING_THE_STAGE;
 import static org.joda.time.Duration.standardMinutes;

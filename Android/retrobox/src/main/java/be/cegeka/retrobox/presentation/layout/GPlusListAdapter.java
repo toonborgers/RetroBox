@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.layout;
+package be.cegeka.retrobox.presentation.layout;
 
 import android.content.Context;
 import android.view.View;

@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.overview;
+package be.cegeka.retrobox.presentation.overview;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -9,12 +9,12 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import be.cegeka.retrobox.AboutActivity;
 import be.cegeka.retrobox.R;
-import be.cegeka.retrobox.newretro.NewRetroActivity;
+import be.cegeka.retrobox.presentation.AboutActivity;
+import be.cegeka.retrobox.presentation.newretro.NewRetroActivity;
 import be.cegeka.retrobox.util.DepthPageTransformer;
 
-import static be.cegeka.retrobox.BeanProvider.retroCreationContext;
+import static be.cegeka.retrobox.infrastructure.BeanProvider.retroCreationContext;
 
 public class OverviewActivity extends Activity implements ActionBar.TabListener {
     private static final int CREATE_NEW_RETRO = 1;

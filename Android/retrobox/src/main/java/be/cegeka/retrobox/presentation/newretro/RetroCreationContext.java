@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro;
+package be.cegeka.retrobox.presentation.newretro;
 
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;

@@ -1,4 +1,4 @@
-package be.cegeka.retrobox.newretro;
+package be.cegeka.retrobox.presentation.newretro.retrodetail;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -27,7 +27,7 @@ import be.cegeka.retrobox.R;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-import static be.cegeka.retrobox.BeanProvider.retroCreationContext;
+import static be.cegeka.retrobox.infrastructure.BeanProvider.retroCreationContext;
 
 public class NewRetroDetailFragment extends Fragment implements CalendarDatePickerDialog.OnDateSetListener, RadialTimePickerDialog.OnTimeSetListener {
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormat.forPattern("dd-MM-yyyy");

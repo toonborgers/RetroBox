@@ -3,4 +3,4 @@
     android:id="@+id/new_retro_pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="be.cegeka.retrobox.newretro.NewRetroActivity" />
+    tools:context="be.cegeka.retrobox.presentation.newretro.NewRetroActivity" />
