@@ -3,6 +3,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/select_activity_info"
-        android:icon="@android:drawable/ic_menu_info_details"
+        android:icon="@drawable/about_icon"
         android:showAsAction="always" />
 </menu>
